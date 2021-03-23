@@ -1,0 +1,18 @@
+js_bundle {
+  name: "my-script",
+  srcs: ["./file1.js"],
+  obfuscate: true
+}
+
+go_tested_binary {
+  // Module (and output) name.
+  name: "binary",
+
+  // Go package to build.
+  pkg: "github.com/Kolbasen/design-practice-1/example/binary",
+
+  testPkg: "github.com/Kolbasen/design-practice-1/example/binary",
+
+  // Build inputs.
+  srcs: ["**/*.go", "../go.mod"]
+}
