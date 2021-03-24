@@ -20,4 +20,5 @@ script:
   - cd ./build
   - go build ./cmd/bood/main.go
   - ./main
+  - chmod 777 ../build/out/bin/bood
   - cd ../example && ../build/out/bin/bood
