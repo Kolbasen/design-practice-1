@@ -1,10 +1,21 @@
-go_binary {
+go_tested_binary {
   // Module (and output) name.
   name: "bood",
 
   // Go package to build.
-  pkg: "github.com/roman-mazur/design-practice-1-template/build/cmd/bood",
+  pkg: "github.com/Kolbasen/design-practice-1/build/gomodule/testedbinary",
+
+  // Go package to test.
+  testPkg: "github.com/Kolbasen/design-practice-1/build/gomodule/testedbinary",
 
   // Build inputs.
-  srcs: ["**/*.go", "../go.mod"]
+  srcs: ["**/*.go", "../go.mod"],
+
+}
+
+js_bundle {
+  name: "js_bundle",
+  path: "../js",
+  srcs: ["./file1.js", "./file2.js"],
+  obfuscate: true
 }

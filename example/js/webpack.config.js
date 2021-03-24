@@ -2,12 +2,10 @@ const path = require('path');
 const WebpackObfuscator = require('webpack-obfuscator');
 
 module.exports = (env = {}) => {
-
-    console.log(env)
-
     const { ENTRY, SHOULD_OBFUSCATE, FILENAME = 'index.js' } = env;
+    const OBFUSCATE = SHOULD_OBFUSCATE === 'true';
 
-    const obfuscatePlugin = Boolean(SHOULD_OBFUSCATE) ?
+    const obfuscatePlugin = OBFUSCATE ?
         [
             new WebpackObfuscator ({
                 rotateStringArray: true
@@ -15,13 +13,12 @@ module.exports = (env = {}) => {
         ]
         : []
 
-    console.log(obfuscatePlugin);
 
     return {
         mode: 'production',
         entry: ENTRY.split(','),
         output: {
-            path: path.resolve(__dirname),
+            path: path.resolve(__dirname + `/../out/js/`),
             filename: `${FILENAME}.js`,
           },
         plugins: obfuscatePlugin,
