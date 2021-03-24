@@ -15,7 +15,7 @@ var (
 
 	// Ninja rule to execute build
 	jsBuild = pctx.StaticRule("build", blueprint.RuleParams{
-		Command:     "cd $workDir/js && webpack --env ENTRY=${entry} --env SHOULD_OBFUSCATE=${shouldObfuscate} FILENAME=${name} --config=webpack.config.js",
+		Command:     "cd $workDir/js && npx webpack --env ENTRY=${entry} --env SHOULD_OBFUSCATE=${shouldObfuscate} FILENAME=${name} --config=webpack.config.js",
 		Description: "build js bundle",
 	}, "entry", "shouldObfuscate", "name", "workDir")
 )

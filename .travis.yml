@@ -10,11 +10,11 @@ addons:
       - ninja-build
       - npm 
 
-before_script:
- - npm i -g webpack
- - npm i -g webpack-cli
- - npm i webpack-obfuscator
- - npm i js-obfuscator
+install:
+  - npm install webpack
+  - npm i webpack-cli
+  - npm i webpack-obfuscator
+  - npm i js-obfuscator
 
 script: 
   - cd ./build
