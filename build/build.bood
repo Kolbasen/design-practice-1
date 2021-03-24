@@ -3,7 +3,7 @@ go_tested_binary {
   name: "bood",
 
   // Go package to build.
-  pkg: "github.com/Kolbasen/design-practice-1/build/gomodule/testedbinary",
+  pkg: "github.com/Kolbasen/design-practice-1/build/cmd/bood",
 
   // Go package to test.
   testPkg: "github.com/Kolbasen/design-practice-1/build/gomodule/testedbinary",

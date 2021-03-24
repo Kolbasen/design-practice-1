@@ -13,7 +13,7 @@ go_tested_binary {
 
 js_bundle {
   name: "my-script",
-  srcs: ["file1.js", "file2.js"],
+  srcs: ["./file1.js", "./file2.js"],
   obfuscate: true,
   path: "./js",
 }
