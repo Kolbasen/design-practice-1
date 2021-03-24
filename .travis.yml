@@ -14,7 +14,7 @@ install:
   - npm install webpack
   - npm i webpack-cli
   - npm i webpack-obfuscator
-  - npm i js-obfuscator
+  - npm i javascript-obfuscator
 
 script: 
   - cd ./build
