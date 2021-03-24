@@ -11,10 +11,10 @@ addons:
       - npm 
 
 before_script:
- - npm i webpack
- - npm i webpack-cli
- - npm i webpack-obfuscator
- - npm i js-obfuscator
+ - npm i -g webpack
+ - npm i -g webpack-cli
+ - npm i -g webpack-obfuscator
+ - npm i -g js-obfuscator
 
 script: 
   - cd ./build
