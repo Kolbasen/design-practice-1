@@ -10,10 +10,8 @@ import (
 	"github.com/google/blueprint"
 	"github.com/roman-mazur/bood"
 
-	// TODO: Підставте свій власний пакет.
-	// "github.com/roman-mazur/design-practice-1-template/build/gomodule"
-	"github.com/Kolbasen/design-practice-1/build/gomodule"
-	"github.com/Kolbasen/design-practice-1/build/jsbundle"
+	"github.com/Kolbasen/design-practice-1/build/gomodule/jsbundle"
+	"github.com/Kolbasen/design-practice-1/build/gomodule/testedbinary"
 )
 
 var (
@@ -23,8 +21,7 @@ var (
 
 func NewContext() *blueprint.Context {
 	ctx := bood.PrepareContext()
-	// TODO: Замініть імплементацію go_binary на власну.
-	ctx.RegisterModuleType("go_tested_binary", gomodule.TestedBinaryFactory)
+	ctx.RegisterModuleType("go_tested_binary", testedbinary.TestedBinaryFactory)
 	ctx.RegisterModuleType("js_bundle", jsbundle.JsBundleFactory)
 	return ctx
 }
@@ -48,7 +45,7 @@ func main() {
 		cmd.Stdin = os.Stdin
 		cmd.Stderr = os.Stderr
 		if err := cmd.Run(); err != nil {
-			config.Info.Fatal("Error invoking ninja build. See logs above.")
+			config.Info.Fatal("Error invoking ninja build:", err)
 		}
 	}
 }

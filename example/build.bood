@@ -1,9 +1,3 @@
-js_bundle {
-  name: "my-script",
-  srcs: ["./file1.js"],
-  obfuscate: true
-}
-
 go_tested_binary {
   // Module (and output) name.
   name: "binary",
@@ -15,4 +9,11 @@ go_tested_binary {
 
   // Build inputs.
   srcs: ["**/*.go", "../go.mod"]
+}
+
+js_bundle {
+  name: "my-script",
+  srcs: ["file1.js", "file2.js"],
+  obfuscate: true,
+  path: "./js",
 }
